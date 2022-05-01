@@ -1,0 +1,46 @@
+{
+  "name": "redab-core",
+  "version": "0.0.8",
+  "description": "Core package for reactive programming",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.(js|ts)\"",
+    "lint": "eslint src --ext .js,.ts",
+    "lint:fix": "eslint src --fix --ext .js,.ts",
+    "test": "yarn build & jest --config jest.config.js",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hebertcisco/ts-npm-package-boilerplate.git"
+  },
+  "keywords": [
+    "react",
+    "reactive",
+    "graph",
+    "state management"
+  ],
+  "author": "Mark Metzger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hebertcisco/ts-npm-package-boilerplate/issues"
+  },
+  "homepage": "https://github.com/hebertcisco/ts-npm-package-boilerplate#readme",
+  "devDependencies": {
+    "@types/jest": "27.4.0",
+    "@typescript-eslint/eslint-plugin": "5.10.2",
+    "@typescript-eslint/parser": "5.10.2",
+    "eslint": "7.32.0",
+    "eslint-plugin-jest": "26.0.0",
+    "jest": "27.4.7",
+    "prettier": "^2.6.2",
+    "ts-jest": "27.1.3",
+    "typescript": "4.5.5"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "dependencies": {}
+}
