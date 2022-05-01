@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hebertcisco/ts-npm-package-boilerplate.git"
+    "url": "git+https://github.com/humflelump/redab/tree/main/core"
   },
   "keywords": [
     "react",
@@ -24,10 +24,7 @@
   ],
   "author": "Mark Metzger",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/hebertcisco/ts-npm-package-boilerplate/issues"
-  },
-  "homepage": "https://github.com/hebertcisco/ts-npm-package-boilerplate#readme",
+  "homepage": "https://github.com/humflelump/redab/tree/main/core",
   "devDependencies": {
     "@types/jest": "27.4.0",
     "@typescript-eslint/eslint-plugin": "5.10.2",

@@ -12,12 +12,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pankod/react-typescript-npm-package-boilerplate"
+    "url": "https://github.com/humflelump/redab/tree/main/react"
   },
-  "bugs": {
-    "url": "https://github.com/pankod/react-typescript-npm-package-boilerplate/issues"
-  },
-  "homepage": "https://github.com/pankod/react-typescript-npm-package-boilerplate",
+  "homepage": "https://github.com/humflelump/redab/tree/main/react",
   "files": [
     "dist"
   ],
