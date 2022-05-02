@@ -1,4 +1,4 @@
-import { Atom, AtomMiddleware } from "./types";
+import { Atom, AtomMiddleware } from './types';
 
 export interface IStore {
   middleware: AtomMiddleware<any>[];
@@ -37,6 +37,10 @@ export class Store implements IStore {
 
   public addMiddleware(...middleware: AtomMiddleware<any>[]): void {
     this.middleware.push(...middleware);
+  }
+
+  public setMiddleware(...middleware: AtomMiddleware<any>[]): void {
+    this.middleware = middleware;
   }
 
   public removeMiddleware(middleware: AtomMiddleware<any>): void {

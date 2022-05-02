@@ -5,11 +5,12 @@ type GetProps<T> = T extends (props: infer Props) => JSX.Element
   ? Props
   : unknown;
 
-export function WithKey<Component extends (props: any) => JSX.Element>(
+export function WithKey<Props, Component extends (props: Props) => JSX.Element>(
   component: Component,
   obj?: {
     genKey?: (props: GetProps<Component>) => any;
     onUpdate?: (props: GetProps<Component>, key: any) => void;
+    onMount?: (props: GetProps<Component>, key: any) => void;
     name?: string;
   }
 ): Component;
@@ -25,6 +26,9 @@ export function WithKey(component, options) {
         this.key = options.genKey(this.props);
       } else {
         this.key = { nodes: new Set(), name: options.name || void 0 };
+      }
+      if (options.onMount) {
+        options.onMount(this.props, this.key);
       }
     }
 

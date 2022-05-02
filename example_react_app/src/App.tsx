@@ -1,6 +1,7 @@
 import React from 'react';
-import { atom, createAsyncSelector, CurrentKeyContext, dynamicSelector, useActions, useCurrentKey, useValues, DEFAULT_STORE, createSubscription, Atom, WithKey } from 'redab';
+import { selector, atom, createAsyncSelector, CurrentKeyContext, dynamicSelector, useActions, useCurrentKey, useValues, DEFAULT_STORE, createSubscription, Atom, WithKey } from 'redab';
 import './App.css';
+import _ from 'lodash';
 
 const rd = atom({data: true, multi: true});
 
@@ -42,6 +43,37 @@ const ListItem = WithKey((props: {n: number}) => {
   a.set(props.n, key);
 }});
 
+const massAtom = atom(10);
+const lightSpeedAtom = atom(3e8);
+
+async function calculateInServerOrWebWorker(m: number, c: number) {
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  return m * c ** 2;
+}
+
+const [energySelector, loadingAtom, errorAtom, forceUpdate] = createAsyncSelector({
+  id: 'my-first-async-selector',
+  defaultValue: null,
+  inputs: [massAtom, lightSpeedAtom],
+  func: async (m, c) => {
+    const E = await calculateInServerOrWebWorker(m, c);
+    return E;
+  },
+  throttle: f => _.throttle(f),
+  onReject: (e) => window.alert(e.message),
+});
+
+const Component = () => {
+  const [E, m, c, loading] = useValues(energySelector, massAtom, lightSpeedAtom, loadingAtom);
+  return <div>
+    <p>Energy: {E}</p>
+    <p>Mass: {m}</p>
+    <p>Speed of Light: {c}</p>
+    <p>Loading: {loading ? 'Y' : 'N'}</p>
+    <button onClick={() => massAtom.set(m + 1)}>Increase Mass</button>
+  </div>
+}
+
 
 function App() {
 
@@ -56,9 +88,12 @@ function App() {
       <ListItem n={5}/>
       <ListItem n={3}/>
       <ListItem n={1}/>
+      <Component />
     </div>
   );
 }
+
+
 
 const Blah =  WithKey(App);
 export default Blah;
