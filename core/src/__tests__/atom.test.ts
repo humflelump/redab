@@ -245,12 +245,14 @@ it('will notify when subscriptions are added or removed by dynamic selectors', (
   expect(data.next).toBe(null);
   expect(data.prev).toBe(null);
   b.set(true);
+  s.get();
   expect(data.next).toEqual([f]);
   expect(data.prev).toEqual([]);
   s.get();
   expect(data.next).toEqual([f]);
   expect(data.prev).toEqual([]);
   b.set(false);
+  s.get();
   expect(data.next).toEqual([]);
   expect(data.prev).toEqual([f]);
   s.get();
@@ -277,6 +279,7 @@ it('will return selectors as dependents', () => {
       return val + 1;
     },
   });
+
   expect(a.getDependants().length).toBe(1);
   expect(a.getDependants()[0]).toBe(b);
   const c = selector({
@@ -310,6 +313,7 @@ it('will return dynamic selectors as dependents', () => {
   expect(b.getDependants()[0]).toBe(undefined);
   expect(c.getDependants()[0]).toBe(sel);
   c.set(false);
+  sel.get();
   expect(a.getDependants()[0]).toBe(undefined);
   expect(b.getDependants()[0]).toBe(sel);
   expect(c.getDependants()[0]).toBe(sel);

@@ -73,7 +73,6 @@ it('has core functionality', (done) => {
       expect(c2).toEqual([[], [subscription]]);
       expect(c3).toEqual([[5]]);
       expect(c4).toEqual([[6]]);
-      //console.log('got', counterAtom.get());
       expect(counterAtom.get()).toBe(2);
       timeout(
         () => {

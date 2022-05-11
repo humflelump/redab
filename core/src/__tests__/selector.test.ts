@@ -7,6 +7,7 @@ it('is exported', () => {
 it('has basic get functionality', () => {
   const s = selector({
     id: 's',
+    inputs: [],
     func: () => 5,
   });
   expect(s.get()).toBe(5);
@@ -17,6 +18,7 @@ it('can contain metadata', () => {
   const a = selector({
     id: '8',
     metadata: 'yo',
+    inputs: [],
     func: () => null,
   });
 
@@ -27,6 +29,7 @@ it('has basic memoization functionality', () => {
   let calls = 0;
   const s = selector({
     id: 's',
+    inputs: [],
     func: () => {
       calls++;
       return 1;
@@ -88,6 +91,7 @@ it('has more complex memoization functionality', () => {
 it('has an id that can be retrieved', () => {
   const s = selector({
     id: 'hi',
+    inputs: [],
     func: () => null,
   });
   expect(s.getId()).toBe('hi');
@@ -96,6 +100,7 @@ it('has an id that can be retrieved', () => {
 it('has a default id', () => {
   const s = selector({
     func: () => null,
+    inputs: [],
   });
   expect(s.getId()).toBe('-');
 });
@@ -147,14 +152,17 @@ it('can be subscribed to and unsubscribed from', () => {
   const a = atom(1);
   const b = atom(2);
   const c = selector({
+    id: 'c',
     inputs: [],
     func: () => null,
   });
   const d = selector({
+    id: 'd',
     inputs: [b, c],
     func: () => null,
   });
   const e = selector({
+    id: 'e',
     inputs: [d],
     func: () => null,
   });
@@ -163,7 +171,6 @@ it('can be subscribed to and unsubscribed from', () => {
     calls++;
   };
   e.subscribe(f);
-
   expect(calls).toBe(0);
   b.set(3);
   expect(calls).toBe(1);

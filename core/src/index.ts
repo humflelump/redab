@@ -1,6 +1,6 @@
-import { atom } from './Atom';
-import { selector } from './Selector';
-import { dynamicSelector } from './DynamicSelector';
+import { atom } from './atom/construct';
+import { selector } from './selector/construct';
+import { dynamicSelector } from './dynamicSelector/construct';
 import { DEFAULT_STORE, Store, IStore } from './Store';
 import {
   ListenerListener,
