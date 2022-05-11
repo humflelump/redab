@@ -158,7 +158,9 @@ it('will only notify subscriptions when notifyListeners is true', () => {
   expect(data).toBe(0);
   a.set(6);
   expect(data).toBe(1);
+  expect(a.shouldNotifyListeners()).toBe(true);
   a.setIfShouldNotifyListeners(false);
+  expect(a.shouldNotifyListeners()).toBe(false);
   a.set(7);
   expect(data).toBe(1);
   a.setIfShouldNotifyListeners(true);

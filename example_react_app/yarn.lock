@@ -5756,14 +5756,9 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.npmjs.org/lodash.uniq/-/lodash.uniq-4.5.0.tgz"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.20, lodash@^4.7.0:
+lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.7.0:
   version "4.17.21"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
-  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
-
-lodash@^4.17.21:
-  version "4.17.21"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 loose-envify@^1.1.0, loose-envify@^1.4.0:
@@ -7229,10 +7224,10 @@ redab-core@0.0.6:
   resolved "https://registry.yarnpkg.com/redab-core/-/redab-core-0.0.6.tgz#b9d9609a33fecd7413d8038ebbbd6a47b62e39cb"
   integrity sha512-k/EW9mmiZ2dsPh1ZJuhTuxsba+QSq/DqILkqvfe1z9X1WcVbAMHwejWtYRML95c/sIxY+9PfM6AwvhF/hXXFQg==
 
-redab-core@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/redab-core/-/redab-core-0.0.8.tgz#c26496cf03ecd63acbc2752016c369d32d81ad11"
-  integrity sha512-BJ62V7GjAD5O41qquuY2MhHrd7muKrwd0obHbA4vKsa9q/TCDFqufFLN/k47/vlK+OfOMnYkwAbFohNUaL0fcw==
+redab-core@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/redab-core/-/redab-core-0.0.10.tgz#5a5821e3541df54ab1b81f33c1dcbc3fde7f0799"
+  integrity sha512-pIj3iY9t4RIa90h1jBjxVs3t67xfvfYiHR8kcCxVGzAiBI4fTYMMQpe/begsuJwFObbSL3fSLs/M4cZYrVMaDA==
 
 redab-utils@0.0.5:
   version "0.0.5"
@@ -7241,13 +7236,13 @@ redab-utils@0.0.5:
   dependencies:
     redab-core "0.0.6"
 
-redab-utils@^0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/redab-utils/-/redab-utils-0.0.9.tgz#a8e3165ec680b615ef5c28f16ac92bbcaba3ce2e"
-  integrity sha512-kMqywpgjmtQ65BdCSkYEcGMhxLURnKkDhnCgF90Ff3eVGX5loIYvRJmvjbFf+v5CLNLmdYqyXs+MJzBApQr2tA==
+redab-utils@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/redab-utils/-/redab-utils-0.0.10.tgz#3b3a0daccc5581ead5bbca2a2ba20ae03feb39e2"
+  integrity sha512-T8xPL2zMYNZMVDGsQ+qzj3nEOcNLcCEexHNsfAhLOrbbtbuFa5+HHXpK1CuFkhxFtkSv6FQU531z82cUs1DqIg==
   dependencies:
     redab "^0.0.22"
-    redab-core "^0.0.8"
+    redab-core "^0.0.10"
 
 redab@^0.0.22:
   version "0.0.22"
@@ -7256,12 +7251,12 @@ redab@^0.0.22:
   dependencies:
     redab-utils "0.0.5"
 
-redab@^0.0.27:
-  version "0.0.27"
-  resolved "https://registry.yarnpkg.com/redab/-/redab-0.0.27.tgz#97ea7038d9e585e47d7b344eb5a054dad63d592a"
-  integrity sha512-weUZDJbEFDlYLN7IdVck/avK1Y4nRRnYwyV9qzFjtGo4vZsl4ePp85DCQYRrGXqttTolQXIMP+w7PTLExKE59g==
+redab@^0.0.28:
+  version "0.0.28"
+  resolved "https://registry.yarnpkg.com/redab/-/redab-0.0.28.tgz#ccdf7c1a52c124a6b13fe9e112b43a2d2e949fd4"
+  integrity sha512-ps83C9/CCW6GAnZdwRlfni/62F8ebYIhynG8bSmeHDTwecfo/6trid0wvzMcYsWKto+tzXVLkgIuTpj6E3BDsA==
   dependencies:
-    redab-utils "^0.0.9"
+    redab-utils "^0.0.10"
 
 redent@^3.0.0:
   version "3.0.0"

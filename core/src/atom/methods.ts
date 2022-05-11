@@ -56,4 +56,10 @@ export const atomMethods = {
     key = this.multi ? key : NO_KEY;
     this.notifyListeners.set(key, bool);
   },
+
+  shouldNotifyListeners(key) {
+    key = this.multi ? key : NO_KEY;
+    if (!this.notifyListeners.has(key)) return true;
+    return this.notifyListeners.get(key);
+  },
 };

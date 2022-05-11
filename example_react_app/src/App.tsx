@@ -1,7 +1,7 @@
 import React from 'react';
 import { selector, atom, createAsyncSelector, CurrentKeyContext, dynamicSelector, useActions, useCurrentKey, useValues, DEFAULT_STORE, createSubscription, Atom, WithKey } from 'redab';
 import './App.css';
-import _ from 'lodash';
+// import _ from 'lodash';
 
 const rd = atom({data: true, multi: true});
 
@@ -31,6 +31,14 @@ const sub = createSubscription({
   }
 })
 
+const sum = dynamicSelector((get, getAll) => {
+  const map = getAll(sub);
+  let s = 0;
+  for (const v of Array.from(map.values())) {
+    s += v;
+  }
+  return s;
+});
 
 const a = atom({data: 5, multi: true});
 
@@ -59,14 +67,21 @@ const [energySelector, loadingAtom, errorAtom, forceUpdate] = createAsyncSelecto
     const E = await calculateInServerOrWebWorker(m, c);
     return E;
   },
-  throttle: f => _.throttle(f),
+  throttle: f => f,
   onReject: (e) => window.alert(e.message),
 });
 
+DEFAULT_STORE.setMiddleware((next, curr, atom, key) => {
+  console.log(atom.getId(), 'changed from', curr, 'to', next);
+  return next;
+});
+
 const Component = () => {
-  const [E, m, c, loading] = useValues(energySelector, massAtom, lightSpeedAtom, loadingAtom);
+  const [m, c, loading, s] = useValues(massAtom, lightSpeedAtom, loadingAtom, sum);
+  console.log('render')
   return <div>
-    <p>Energy: {E}</p>
+    {/* <p>Energy: {E}</p> */}
+    <p>s: {s}</p>
     <p>Mass: {m}</p>
     <p>Speed of Light: {c}</p>
     <p>Loading: {loading ? 'Y' : 'N'}</p>

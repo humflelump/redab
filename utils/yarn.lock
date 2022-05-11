@@ -2636,10 +2636,10 @@ redab-core@0.0.6:
   resolved "https://registry.yarnpkg.com/redab-core/-/redab-core-0.0.6.tgz#b9d9609a33fecd7413d8038ebbbd6a47b62e39cb"
   integrity sha512-k/EW9mmiZ2dsPh1ZJuhTuxsba+QSq/DqILkqvfe1z9X1WcVbAMHwejWtYRML95c/sIxY+9PfM6AwvhF/hXXFQg==
 
-redab-core@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/redab-core/-/redab-core-0.0.8.tgz#c26496cf03ecd63acbc2752016c369d32d81ad11"
-  integrity sha512-BJ62V7GjAD5O41qquuY2MhHrd7muKrwd0obHbA4vKsa9q/TCDFqufFLN/k47/vlK+OfOMnYkwAbFohNUaL0fcw==
+redab-core@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/redab-core/-/redab-core-0.0.10.tgz#5a5821e3541df54ab1b81f33c1dcbc3fde7f0799"
+  integrity sha512-pIj3iY9t4RIa90h1jBjxVs3t67xfvfYiHR8kcCxVGzAiBI4fTYMMQpe/begsuJwFObbSL3fSLs/M4cZYrVMaDA==
 
 redab-utils@0.0.5:
   version "0.0.5"
