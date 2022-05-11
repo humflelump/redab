@@ -1,6 +1,6 @@
 {
   "name": "redab",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "description": "react state management package",
   "scripts": {
     "build": "rm -rf ./dist/** && tsc",
@@ -35,7 +35,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "redab-utils": "^0.0.9"
+    "redab-utils": "^0.0.10"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
