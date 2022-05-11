@@ -1,6 +1,6 @@
 {
   "name": "redab-utils",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Useful functions built on redab-core",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -41,6 +41,6 @@
   ],
   "dependencies": {
     "redab": "^0.0.22",
-    "redab-core": "^0.0.8"
+    "redab-core": "^0.0.10"
   }
 }
