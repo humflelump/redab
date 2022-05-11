@@ -302,6 +302,47 @@ export const Component = () => {
 };
 ```
 
+# Accessing all values inside atoms
+
+Sometimes you will have multiple components mounted but need visibility into all the data inside atom. An example use-case would be if you need to know the total height all listitems. This is easy with the 2nd parameter of the dynamicSelector's func.
+
+
+```js
+import React from 'react';
+import { atom, selector, useValues, useActions } from 'redab';
+
+const heightAtom = atom({ data: 0, multi: true });
+
+const totalHeight = dynamicSelector((_get, getAll) => {
+  const map = getAll(heightAtom);
+  const heightSum = Array.from(map.values()).reduce((a, b) => a + b, 0);
+  return heightSum;
+});
+
+const ListItem = React.memo(() => {
+  const [height] = useValues(heightAtom);
+
+  return <div style={{ height }} />
+});
+
+const ReusableListItem = WithKey(ListItem, { 
+  onMount: (props, key) => {
+    currValAtom.set(props.height, key);
+  },
+});
+
+export const Component = () => {
+  const [height] = useValues(totalHeight);
+  
+  return <div style={{ height }}>
+    <ReusableListItem height={100} />
+    <ReusableListItem height={200} />
+    <ReusableListItem height={300} />
+  </div>
+};
+```
+
+
 # Throttled Selectors
 
 If you have an expensive calculation or a calculation that leads to an expensive render event, you may want to wrap the calculation in a throttled selector to create a better user experience.
